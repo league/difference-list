@@ -17,3 +17,5 @@ Some limitations of the `DList` representation are:
 
   - We cannot test equality on two `DList` structures without converting them
     to regular lists.
+
+See also: <http://package.elm-lang.org/packages/league/difference-list/>
