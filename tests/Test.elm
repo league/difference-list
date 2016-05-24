@@ -76,6 +76,11 @@ tests = suite "Difference lists"
           <| toList
           <| append empty empty
 
+        , test "append using operator"
+          <| assertEqual [13, 81, 19]
+          <| toList
+          <| singleton 13 +&+ fromList [81] +&+ empty +&+ singleton 19 +&+ empty
+
         , test "map over a non-empty list"
           <| assertEqual ["21", "88", "93"]
           <| toList

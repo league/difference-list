@@ -1,16 +1,17 @@
 module DList exposing
   ( DList
-  , toList
-  , empty
-  , singleton
-  , fromList
-  , cons
-  , snoc
+  , (+&+)
   , append
-  , map
-  , foldr
   , concat
+  , cons
+  , empty
+  , foldr
+  , fromList
   , intersperse
+  , map
+  , singleton
+  , snoc
+  , toList
   )
 
 {-| A representation of lists with an efficient append operation.
@@ -32,7 +33,7 @@ Some limitations of the `DList` representation are:
 @docs DList, toList
 
 # Construction
-@docs empty, singleton, cons, snoc, append, fromList
+@docs empty, singleton, cons, snoc, append, (+&+), fromList
 
 # Processing
 @docs concat, foldr, intersperse, map
@@ -71,6 +72,11 @@ snoc (DList f) x = DList <| f << (::) x
 {-| Concatenate two lists. -}
 append : DList a -> DList a -> DList a
 append (DList f) (DList g) = DList <| f << g
+
+{-| An operator for append. -}
+(+&+) : DList a -> DList a -> DList a
+(+&+) = append
+infixr 9 +&+
 
 {-| Iterate through a `DList`. -}
 foldr : (a -> b -> b) -> b -> DList a -> b
