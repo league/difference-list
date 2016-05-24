@@ -1,0 +1,14 @@
+{
+    "version": "1.0.0",
+    "summary": "A representation of lists with an efficient append operation",
+    "repository": "https://github.com/league/difference-list.git",
+    "license": "BSD3",
+    "source-directories": [
+        "src"
+    ],
+    "exposed-modules": ["DList"],
+    "dependencies": {
+        "elm-lang/core": "4.0.1 <= v < 5.0.0"
+    },
+    "elm-version": "0.17.0 <= v < 0.18.0"
+}
