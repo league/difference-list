@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "summary": "A representation of lists with an efficient append operation",
+    "summary": "`DList` is a representation of lists with an efficient append operation",
     "repository": "https://github.com/league/difference-list.git",
     "license": "BSD3",
     "source-directories": [

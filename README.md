@@ -15,4 +15,5 @@ Some limitations of the `DList` representation are:
   - We cannot ask for the length of a `DList` without converting it to a
     regular list.
 
-  - We cannot test equality on `DList`s without converting them.
+  - We cannot test equality on two `DList` structures without converting them
+    to regular lists.
