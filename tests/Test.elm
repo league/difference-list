@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import ElmTest exposing (..)
-import Html exposing (pre, text)
 import DList exposing (..)
 
 tests : Test
