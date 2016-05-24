@@ -75,6 +75,41 @@ tests = suite "Difference lists"
           <| assertEqual []
           <| toList
           <| append empty empty
+
+        , test "map over a non-empty list"
+          <| assertEqual ["21", "88", "93"]
+          <| toList
+          <| map toString
+          <| fromList [21, 88, 93]
+
+        , test "fold over an empty list"
+          <| assertEqual 1
+          <| foldr (*) 1 empty
+
+        , test "fold over non-empty list"
+          <| assertEqual 120
+          <| foldr (*) 1
+          <| fromList [5,4,3,2]
+
+        , test "concat a list of dlists"
+          <| assertEqual [13, 81, 99, 40]
+          <| toList
+          <| concat [ singleton 13
+                    , empty
+                    , fromList [81, 99]
+                    , empty
+                    , singleton 40
+                    , empty
+                    ]
+
+        , test "intersperse a list into a list of dlists"
+          <| assertEqual [15, 0, 81, 17, 0, 99]
+          <| toList
+          <| intersperse (singleton 0)
+             [ singleton 15
+             , fromList [81, 17]
+             , singleton 99
+             ]
         ]
 
 main =
