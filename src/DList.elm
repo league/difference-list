@@ -14,10 +14,10 @@ module DList exposing
 -}
 
 
-{-| Blah the type. -}
+{-| TODO -}
 type DList a = DList (List a -> List a)
 
-{-| whatever. -}
+{-| TODO -}
 empty : DList a
 empty = DList identity
 
