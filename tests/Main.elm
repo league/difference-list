@@ -1,9 +1,10 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import DList exposing (..)
 import Expect exposing (equal)
+import Json.Encode exposing (Value)
 import Test exposing (Test, describe, test)
-import Test.Runner.Html
+import Test.Runner.Node exposing (run, TestProgram)
 
 tests : Test
 tests = describe "Difference lists"
@@ -119,5 +120,7 @@ tests = describe "Difference lists"
              ]
         ]
 
-main =
-    Test.Runner.Html.run tests
+main : TestProgram
+main = run emit tests
+
+port emit : (String, Value) -> Cmd msg

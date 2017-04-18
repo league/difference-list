@@ -1,0 +1,4 @@
+#!/bin/bash
+elm package install --yes && elm make --warn src/DList.elm
+(cd tests && elm package install --yes && elm make --warn Main.elm)
+elm-test
