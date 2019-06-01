@@ -2,7 +2,7 @@
     "type": "package",
     "name": "league/difference-list",
     "summary": "DList is a representation of lists with an efficient append operation",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "version": "2.0.0",
     "exposed-modules": [
         "DList"
