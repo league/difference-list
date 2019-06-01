@@ -1,17 +1,1 @@
-sudo: false
-os:
-  - linux
-env:
-  matrix:
-    - ELM_VERSION=0.19.0 TARGET_NODE_VERSION=node
-before_install:
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-install:
-  - nvm install $TARGET_NODE_VERSION
-  - nvm use $TARGET_NODE_VERSION
-  - node --version
-  - npm --version
-  - npm install --unsafe-perm -g elm@$ELM_VERSION elm-test
-script:
-  - elm make
-  - elm-test
+language: elm
