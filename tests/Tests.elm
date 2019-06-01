@@ -1,13 +1,12 @@
-port module Main exposing (..)
+module Tests exposing (..)
 
-import DList exposing (..)
 import Expect exposing (equal)
-import Json.Encode exposing (Value)
 import Test exposing (Test, describe, test)
-import Test.Runner.Node exposing (run, TestProgram)
+import DList exposing (..)
 
-tests : Test
-tests = describe "Difference lists"
+suite : Test
+suite =
+  describe "Difference lists"
         [ test "empty list is empty"
           <| \() -> equal []
           <| toList empty
@@ -79,15 +78,10 @@ tests = describe "Difference lists"
           <| toList
           <| append empty empty
 
-        , test "append using operator"
-          <| \() -> equal [13, 81, 19]
-          <| toList
-          <| singleton 13 +&+ fromList [81] +&+ empty +&+ singleton 19 +&+ empty
-
         , test "map over a non-empty list"
           <| \() -> equal ["21", "88", "93"]
           <| toList
-          <| map toString
+          <| map String.fromInt
           <| fromList [21, 88, 93]
 
         , test "fold over an empty list"
@@ -119,8 +113,3 @@ tests = describe "Difference lists"
              , singleton 99
              ]
         ]
-
-main : TestProgram
-main = run emit tests
-
-port emit : (String, Value) -> Cmd msg
