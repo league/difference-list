@@ -11,7 +11,7 @@ install:
   - nvm use $TARGET_NODE_VERSION
   - node --version
   - npm --version
-  - npm install -g elm@$ELM_VERSION elm-test
+  - npm install --unsafe-perm -g elm@$ELM_VERSION elm-test
 script:
   - elm make
   - elm-test
